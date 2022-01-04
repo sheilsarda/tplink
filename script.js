@@ -106,6 +106,7 @@ function myDash($scope, $mdToast, $http, $interval, $cookies) {
             window.response = response;
             var testval = JSON.parse(response.data.result.responseData).system.get_sysinfo.relay_state;
             $scope.tpl_showRealTime(response);            /* for emeter devices, also show this in the console */
+            console.log(response);
 
             $scope.tpl.devices[device_index].is_powered = (testval == true);
         });
