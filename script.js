@@ -117,7 +117,7 @@ function myDash($scope, $mdToast, $http, $interval, $cookies) {
         if (has_emeter){
             var device_name = JSON.parse(response.data.result.responseData).system.get_sysinfo.alias;
             var realtime = JSON.parse(response.data.result.responseData).emeter.get_realtime;
-            console.log("Device " + device_name + " is drawing " + realtime.current_ma + "milli amps and is connected to a " + realtime.voltage_mv + "milli volts supply");
+            console.log("Device " + device_name + " draws " + realtime.current_ma + "mA at " + realtime.voltage_mv + "mV" + "; Power draw is " + realtime.power_mw + "mW");
         }
 
     }
