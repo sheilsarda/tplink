@@ -117,7 +117,12 @@ function myDash($scope, $mdToast, $http, $interval, $cookies) {
         if (has_emeter){
             var device_name = JSON.parse(response.data.result.responseData).system.get_sysinfo.alias;
             var realtime = JSON.parse(response.data.result.responseData).emeter.get_realtime;
-            console.log("Device " + device_name + " draws " + realtime.current_ma + "mA at " + realtime.voltage_mv + "mV" + "; Power draw is " + realtime.power_mw + "mW");
+            /** This solution only currently works for one device; need to 
+             * implement an array indexed by device IDs for scalability
+             */ 
+            var printstr = "Device " + device_name + " draws " + realtime.current_ma + "mA at " + realtime.voltage_mv + "mV" + "; Power draw is " + realtime.power_mw + "mW";
+            // console.log(printstr);
+            $scope.printstr = printstr;
         }
 
     }
