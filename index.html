@@ -26,7 +26,7 @@
                             <h3>{{device.alias}}</h3>
 
                             <p>{{device.deviceModel}} - {{device.deviceName}}</p>
-                            <p>Power draw is {{device.realtime.power_mw}} mW</p>
+                            <p>Power draw is {{device.get_realtime.power_mw}} mW</p>
                         </div>
                         <md-switch ng-change="tpl_setState($index,device.is_powered)"
                                    ng-model="device.is_powered"></md-switch>
